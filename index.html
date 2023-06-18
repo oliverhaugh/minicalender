@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calender</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="calender">
+            <div class="left">
+                <p id="date">01</p>
+                <p id="day">Sunday</p>
+            </div>
+            <div class="right">
+                <p id="month">January</p>
+                <p id="year">2020</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // variables that hold the elements
+        const date = document.getElementById("date");
+        const day = document.getElementById("day");
+        const month = document.getElementById("month");
+        const year = document.getElementById("year");
+
+        // variable used to get the date
+        const today = new Date();
+
+        // Arrays
+        const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const allMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        // code that changes the date on the screen
+        date.innerHTML = (today.getDate() < 10?"0":"") + today.getDate();
+        day.innerHTML = weekDays[today.getDay()];
+        month.innerHTML = allMonths[today.getMonth()];
+        year.innerHTML = today.getFullYear();
+    </script>
+</body>
+</html>
